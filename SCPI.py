@@ -1,9 +1,4 @@
 import socket
-import time
-import struct
-
-
-# Based on mclib by Thomas Schmid (http://github.com/tschmid/mclib)
 
 class SCPI:
     def __init__(self, host, port):

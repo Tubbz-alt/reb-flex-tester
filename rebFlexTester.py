@@ -5,12 +5,7 @@ import socket
 import time
 import SCPI
 
-
-
-
-# open remote measurement device (replace "hostname" by its actual name)
 device = SCPI.SCPI("192.168.0.2",1394)
-
 print("Connected.")
 
 print("Factory configuration.")
@@ -68,8 +63,8 @@ file.write("IDC40 Pin\t7702 Channel\tLabel\tVDC\n")
 
 
 for i in range(len(labels)):
-    print ("%i\t%i\t%s\t%e" % (pin[i],i+1, labels[i], voltages[i]))
-    file.write("%i\t%i\t%s\t%e\n" % (pin[i],i+1, labels[i], voltages[i]))
+    print ("%i\t%i\t%s\t%.2f" % (pin[i],i+1, labels[i], voltages[i]))
+    file.write("%i\t%i\t%s\t%.2f\n" % (pin[i],i+1, labels[i], voltages[i]))
 
 file.close()
 
